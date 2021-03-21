@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Saúde e Atividades Físicas</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="jumbotron jumbotron-fluid">
+					<div class="container">
+						<h1 class="display-4">Saúde e Atividades Físicas</h1>
+						<p class="lead">Tudo sobre saúde, você encontra aqui!</p>
+						<p class="lead">Nome: Naiara Andrea Guerra Dolci</p>
+						<p class="lead">RM: 23131</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="p-4">
+					<nav>
+						<ul class="nav flex-column">
+							<li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+							<li class="nav-item"><a class="nav-link" href="imc.html">Indice de Massa Corporal</a></li>
+							<li class="nav-item"><a class="nav-link" title="Taxa Metabolica Basal e Fator Atividade" href="tmb.html">TMB & FA</a></li>
+							<li class="nav-item"><a class="nav-link" href="fmc.html">Frequencia Cardíaca Máxima</a></li>
+						</ul>
+					</nav> 
+				</div>
+			</div>
+
+			<div class="col-md-9">
+				<article>
+					<h2>Saiba como calcular seu <b><i>IMC, TMB, FCM</i></b>.</h2>
+					<hr />
+
+					<h3>Indice de massa Corporal</h3>
+					<p>Conhecido também como IMC, nada mais do que um cálculo que você irá fornecer seu peso e sua altura e com isso será verificado se seu peso esta ideal referente a sua altura. </p>
+					
+					<pre>
+						<b>Cálculo:</b> peso / (altura * altura)
+					</pre>
+
+					<h3> TAXA METÁBOLICA BASAL</h3>
+					<p>Também conhecida como TMB, ela seria um cálculo matemático para verificar qual seria o nível de caloria que poderá ser consumida durante o período do dia para manter seu corpo nutrido. </p>
+
+						<b>Cálculo:</b> 
+						<table width = "100%" border="1">
+							<thead>
+								<tr>
+									<th>Idade</th>
+									<th>Homens</th>
+									<th>Mulheres</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>18 - 30 anos </td>
+									<td>15.3 * peso + 679</td>
+									<td>14.7 * peso + 496</td>
+								</tr>
+								<tr>
+									<td>31 - 60 anos</td> 
+									<td>11.6 * peso + 879</td>
+									<td>8.7 * peso + 829</td>
+								</tr>
+								<tr>
+									<td>Acima de 60 anos</td>
+									<td>3.5 * peso + 487</td>
+									<td>10.5 * peso + 596</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<h3>FATOR ATIVIDADE</h3>
+						<p>Seria um cálculo matemática que será realizado caso a pessoa realize atividade física para verificar a taxa de caloria consumida durante o  dia. </p>
+						<table width = "100%" border="1">
+							<thead>
+								<tr>
+									<th>Genero</th>
+									<th>Leve</th>
+									<th>Moderada</th>
+									<th>Intensa</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Homens</td>
+									<td>1.55</td>
+									<td>1.78</td>
+									<td>2.10</td>
+								</tr>
+								<tr>
+									<td>Mulheres</td> 
+									<td>1.56</td>
+									<td>1.64</td>
+									<td>1.82</td>
+								</tr>
+							</tbody>
+						</table>
+						<pre>
+							<b>Cálculo:</b>  Taxa Metabolica Basal * Fator da Atividade
+						</pre>
+
+
+						<h3>frequencia cardiaca Maxima</h3>
+						<p>Seria a quantidade maxima de batimentos cardiacos por minutos.</p>
+						<pre>
+							<b>Cálculo:</b> 206.9 - (0.67 * idade)
+						</pre>
+				</article>
+			</div>
+		</div>
+ 	</body>
+</html>

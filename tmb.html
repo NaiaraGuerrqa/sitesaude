@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Saúde e Atividades Físicas</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="jumbotron jumbotron-fluid">
+					<div class="container">
+						<h1 class="display-4">Saúde e Atividades Físicas</h1>
+						<p class="lead">Tudo sobre saúde, você encontra aqui!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="p-4">
+					<nav>
+						<ul class="nav flex-column">
+							<li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+							<li class="nav-item"><a class="nav-link" href="imc.html">Indice de Massa Corporal</a></li>
+							<li class="nav-item"><a class="nav-link" title="Taxa Metabolica Basal e Fator Atividade" href="tmb.html">TMB & FA</a></li>
+							<li class="nav-item"><a class="nav-link" href="fmc.html">Frequencia Cardíaca Máxima</a></li>
+						</ul>
+					</nav> 
+				</div>
+			</div>
+
+			<div class="col-md-9">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="card" style="width: 18rem;">
+							<div class="card-header">
+							  Taxa Metabólica Basal
+							</div>
+
+							<button class="btn btn-primary" onclick="CalcularTMB()">Calcular</button>
+						  </div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="card" style="width: 18rem;">
+							<div class="card-header">
+							  Fator Atividade
+							</div>
+							
+							<button class="btn btn-primary" onclick="CalcularFA()">Calcular</button>
+						  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			var peso;
+			var tmb;
+			var genero;
+			var idade;
+			var fatorAtividade;
+			var FA;
+
+			function CalcularTMB() {
+				genero=prompt("Informe qual seu sexo, como F e M: ");
+				idade=Number(prompt("Qual é sua idade: "));
+				peso=Number(prompt("Informe seu peso:" ));
+				
+				if (genero.toUpperCase() == "F"){
+					if (idade >= 18 && idade <= 30){
+						tmb = (14.7 * peso)+ 496;
+					} else if (idade >= 31 && idade <= 60){
+						tmb =  (8.7 * peso)+ 829;
+					} else {
+						tmb = (10.5 * peso) + 596;
+					}
+				}
+				else {
+					if (idade >= 18 && idade <= 30){
+					tmb = (15.3 * peso) + 679;
+					} else if (idade >= 31 && idade <= 60){
+					tmb = (11.6 / peso) + 879;
+					} else{
+					tmb = (3.5 * peso) + 487; 
+					}
+				}
+						
+				alert("Sua Taxa Metabolica Basal é de: " + tmb);
+			}
+
+			function CalcularFA() {
+				if (tmb == undefined) {
+					alert("Necessário realizar o Cálculo da Taxa Metabólica Basal");
+				} else {
+					fatorAtividade=prompt("Qual seu nivel de atividade? \nLeve \nModerada \nIntensa");
+
+					if (fatorAtividade.toUpperCase() == "LEVE") {
+						if (genero.toUpperCase() == "M"){
+							FA = tmb * 1.55;
+						} else { 
+							FA = tmb * 1.56;
+						}
+					} else if (fatorAtividade.toUpperCase() == "MODERADA") {
+						if (genero.toUpperCase() == "M") {
+							FA = tmb * 1.78;
+						} else {
+							FA = tmb * 1.64;
+						}
+					} else {
+						if (genero.toUpperCase() == "M"){
+							FA = tmb * 2.10;	
+						} else {
+							FA = tmb * 1.82
+						}
+					}
+
+					alert("Seu Fator de Atividade é de " + FA.toFixed(2));
+				}
+			}
+		</script>
+ 	</body>
+</html>
